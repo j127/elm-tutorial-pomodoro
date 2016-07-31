@@ -12,7 +12,7 @@ var cmd = 'elm make ./Main.elm --output ./bundle.js';
 clear();
 gulp.task('default', ['server', 'watch', 'elm']);
 
-gulp.task('watch', function(cb) {
+gulp.task('watch', function() {
     gulp.watch('**/*.elm', ['elm']);
 });
 
