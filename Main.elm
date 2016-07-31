@@ -204,7 +204,7 @@ markPomsCompleted model =
 
 view : Model -> Html Msg
 view model =
-    div [ class "appWindow" ]
+    div [ class "container appWindow" ]
         [ makeHeader
         , p [ class "counter" ]
             [ text <| "Routines Completed: " ++ toString model.pomsCompleted ]
@@ -229,7 +229,7 @@ makeFooter =
     footer []
         [ div [ class "links" ] [ linkMaker ]
         , div [ class "logo" ]
-            [ img [ src "/static/Signature.JPG" ] []
+            [ img [ src "http://placehold.it/200x50" ] []
             ]
         ]
 
@@ -241,8 +241,8 @@ linkMaker =
 
 getLinks : List ( String, String )
 getLinks =
-    [ ( "Place 1", "http://example.com/" )
-    , ( "Place 2", "http://example.com/" )
+    [ ( "Link 1", "http://example.com/" )
+    , ( "Link 2", "http://example.com/" )
     ]
 
 
@@ -264,9 +264,9 @@ makeMainPage model =
 makeButtonCluster : Html Msg
 makeButtonCluster =
     div [ class "btncluster" ]
-        [ button [ onClick Start ] [ text "Start" ]
-        , button [ onClick Pause ] [ text "Pause" ]
-        , button [ onClick Clear ] [ text "Clear" ]
+        [ button [ onClick Start, class "btn btn-default" ] [ text "Start" ]
+        , button [ onClick Pause, class "btn btn-default" ] [ text "Pause" ]
+        , button [ onClick Clear, class "btn btn-default" ] [ text "Clear" ]
         ]
 
 
@@ -366,9 +366,9 @@ bezelButtonMaker btnName msg model =
 getBezelBtnClass : String -> Model -> Html.Attribute Msg
 getBezelBtnClass btnName model =
     if btnName == (toString model.timerMode) then
-        class "activebezelbtn"
+        class "active btn btn-primary"
     else
-        class "inactivebezelbtn"
+        class "inactive btn btn default"
 
 
 

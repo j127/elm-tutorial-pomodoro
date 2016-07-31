@@ -1,3 +1,4 @@
 elm-stuff/
 *~
 *.sw[op]
+node_modules/
